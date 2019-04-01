@@ -1,0 +1,15 @@
+{
+  "name": "jquery-wheelcolorpicker",
+  "homepage": "https://github.com/fujaru/jquery-wheelcolorpicker",
+  "version": "3.0.5",
+  "_release": "3.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.5",
+    "commit": "1c93201345e1d4486abfcbb4d2efa97a812b1737"
+  },
+  "_source": "https://github.com/fujaru/jquery-wheelcolorpicker.git",
+  "_target": "^3.0.5",
+  "_originalSource": "fujaru/jquery-wheelcolorpicker",
+  "_direct": true
+}
