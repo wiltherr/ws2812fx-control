@@ -14,7 +14,7 @@ public class SegmentConfig {
     public SegmentConfig(int speed, Mode mode, Options options, List<Color> colors) {
         if (speed > WS2812FX.SPEED_MAX || speed < WS2812FX.SPEED_MIN) {
             throw new IllegalArgumentException(
-                    String.format("Speed value must be in range of %d and %d.", WS2812FX.SPEED_MIN, WS2812FX.SPEED_MAX));
+                    String.format("Speed value must be in range of %d and %d, but was %d.", WS2812FX.SPEED_MIN, WS2812FX.SPEED_MAX, speed));
         }
         this.speed = speed;
         this.mode = mode;

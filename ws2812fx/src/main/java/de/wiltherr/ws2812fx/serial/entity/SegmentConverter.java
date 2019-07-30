@@ -1,21 +1,21 @@
 package de.wiltherr.ws2812fx.serial.entity;
 
 import de.wiltherr.ws2812fx.Segment;
-import de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.UInt;
-import de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.UIntPacket;
-import de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.UIntPacketBuilder;
+import de.wiltherr.ws2812fx.serial.entity.uint.UInt;
+import de.wiltherr.ws2812fx.serial.entity.uint.UIntPacket;
+import de.wiltherr.ws2812fx.serial.entity.uint.UIntPacketBuilder;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.UInt.Type.U_INT_16;
+import static de.wiltherr.ws2812fx.serial.entity.uint.UInt.Type.U_INT_16;
 
 
 public class SegmentConverter {
 
-    public static List<Segment> fromUIntPacketToMultiSegment(UIntPacket uIntPacket) {
-        List<Segment> segments = uIntPacket.split(EntityByteMask.SEGMENT).stream()
+    public static List<Segment> fromUIntPacketToSegmentList(UIntPacket uIntPacket) {
+        List<Segment> segments = uIntPacket.splitByMask(ByteMask.SEGMENT).stream()
                 .map(SegmentConverter::fromUIntPacket)
                 .collect(Collectors.toList());
         IntStream.range(0, segments.size())
@@ -24,7 +24,7 @@ public class SegmentConverter {
     }
 
     public static Segment fromUIntPacket(UIntPacket uIntPacket) {
-        if (uIntPacket.getBytes().length != EntityByteMask.SEGMENT.getByteSize())
+        if (uIntPacket.getBytes().length != ByteMask.SEGMENT.getByteSize())
             throw new IllegalArgumentException(); //TODO messsage
         List<UInt> uInts = uIntPacket.getList();
         return new Segment(

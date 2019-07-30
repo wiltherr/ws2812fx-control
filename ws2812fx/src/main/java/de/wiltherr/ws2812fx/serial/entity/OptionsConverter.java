@@ -2,8 +2,8 @@ package de.wiltherr.ws2812fx.serial.entity;
 
 import de.wiltherr.ws2812fx.FadeOption;
 import de.wiltherr.ws2812fx.Options;
-import de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.UInt;
-import de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.UInt8;
+import de.wiltherr.ws2812fx.serial.entity.uint.UInt;
+import de.wiltherr.ws2812fx.serial.entity.uint.UInt8;
 
 public class OptionsConverter {
 

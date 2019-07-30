@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class VirtualWS2812FX implements WS2812FX {
 
-    final LinkedHashMap<Integer, Segment> segments = new LinkedHashMap<>();
+    private final LinkedHashMap<Integer, Segment> segments = new LinkedHashMap<>();
     private int brightness = WS2812FX.BRIGHTNESS_MIN;
     private int length;
 
@@ -76,7 +76,7 @@ public class VirtualWS2812FX implements WS2812FX {
     @Override
     public void resume() {
         paused = false;
-        //stip is not stopped because resuming command in Arudino libary will start the strip
+        //stip is not stopped because resuming command in ws2812fx libary will start the strip
         stopped = false;
     }
 

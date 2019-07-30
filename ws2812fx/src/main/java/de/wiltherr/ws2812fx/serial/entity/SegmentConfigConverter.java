@@ -1,7 +1,7 @@
 package de.wiltherr.ws2812fx.serial.entity;
 
 import de.wiltherr.ws2812fx.SegmentConfig;
-import de.wiltherr.ws2812fx.serial.serialPacketCommunicator.uint.*;
+import de.wiltherr.ws2812fx.serial.entity.uint.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,7 +11,7 @@ public class SegmentConfigConverter {
 
 
     public static SegmentConfig fromUIntPacket(UIntPacket uIntPacket) {
-        if (uIntPacket.getBytes().length != EntityByteMask.SEGMENT_CONFIG.getByteSize())
+        if (uIntPacket.getBytes().length != ByteMask.SEGMENT_CONFIG.getByteSize())
             throw new IllegalArgumentException(); //TODO messsage
         List<UInt> uIntList = uIntPacket.getList();
         return new SegmentConfig(

@@ -92,7 +92,7 @@ public class LiveModeController implements View {
                 ws2812FXStripModel.updateSegmentMulti(segmentSelection, segmentConfigCopy); //update model
                 log.info("Updated multi segments config successfully");
             } catch (WS2812FXException e) {
-                log.error("Failed to update all segments config / segment configuration: " + segmentConfigCopy, e);
+                log.error("Failed to update multi segments config / segment configuration: " + segmentConfigCopy, e);
                 Notification.show("Failed to update all segments config: " + e.getLocalizedMessage(), Notification.Type.WARNING_MESSAGE);
             }
 //            List<Integer> failedList = new ArrayList<>();

@@ -69,7 +69,7 @@ public class EditSegmentationViewImpl extends VerticalLayout implements EditSegm
         segmentLayout.setMargin(false);
         segmentLayout.setSpacing(false);
 
-        List<Binder.Binding> bindings = new ArrayList();
+        List<Binder.Binding> bindings = new ArrayList<>();
 
         HorizontalLayout titleAndDeleteButton = new HorizontalLayout();
         Label titleLabel = new Label();

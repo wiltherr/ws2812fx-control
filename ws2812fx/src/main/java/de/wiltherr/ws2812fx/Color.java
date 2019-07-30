@@ -18,7 +18,7 @@ public class Color {
     public Color(int r, int g, int b, int w) {
         if (Stream.of(r, g, b, w).anyMatch(i -> i > MAX_VALUE || i < MIN_VALUE)) {
             throw new IllegalArgumentException(
-                    String.format("Color values (r, g, b or w) in range of %d and %d.", MIN_VALUE, MAX_VALUE));
+                    String.format("At least one color value (r, g, b or w) is not range of %d and %d.", MIN_VALUE, MAX_VALUE));
         }
         this.R = r;
         this.G = g;
@@ -27,6 +27,7 @@ public class Color {
     }
 
     public Color() {
+        this(0, 0, 0, 0);
     }
 
     public int getR() {
